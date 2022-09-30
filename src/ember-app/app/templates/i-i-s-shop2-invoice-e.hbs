@@ -1,0 +1,133 @@
+<h3 class="ui header">{{t "forms.i-i-s-shop2-invoice-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.number
+      class=(if (v-get validationModel "number" "isInvalid") "error")
+      label=(t "forms.i-i-s-shop2-invoice-e.number-caption")
+      data-test-i-i-s-shop2-invoice-e-number=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "number" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-shop2-invoice-e-status="true">
+    <label>{{t "forms.i-i-s-shop2-invoice-e.status-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-shop2-invoice-status")
+      value=model.status
+      class=(if (v-get validationModel "status" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "status" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-shop2-invoice-e.createDate-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.createDate
+      class=(if (v-get validationModel "createDate" "isInvalid") "error")
+      data-test-i-i-s-shop2-invoice-e-createDate=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "createDate" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.order.number
+      class=(if (v-get validationModel.order "number" "isInvalid") "error")
+      label=(t "forms.i-i-s-shop2-invoice-e.order.number-caption")
+      data-test-i-i-s-shop2-invoice-e-order-number=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.order "number" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.customerName
+      class=(if (v-get validationModel "customerName" "isInvalid") "error")
+      label=(t "forms.i-i-s-shop2-invoice-e.customerName-caption")
+      data-test-i-i-s-shop2-invoice-e-customerName=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "customerName" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.totalSum
+      class=(if (v-get validationModel "totalSum" "isInvalid") "error")
+      label=(t "forms.i-i-s-shop2-invoice-e.totalSum-caption")
+      data-test-i-i-s-shop2-invoice-e-totalSum=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "totalSum" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.totalWeight
+      class=(if (v-get validationModel "totalWeight" "isInvalid") "error")
+      label=(t "forms.i-i-s-shop2-invoice-e.totalWeight-caption")
+      data-test-i-i-s-shop2-invoice-e-totalWeight=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "totalWeight" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.note
+      class=(if (v-get validationModel "note" "isInvalid") "error")
+      label=(t "forms.i-i-s-shop2-invoice-e.note-caption")
+      data-test-i-i-s-shop2-invoice-e-note=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "note" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-shop2-invoice-e.shipmentDateTime-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.shipmentDateTime
+      class=(if (v-get validationModel "shipmentDateTime" "isInvalid") "error")
+      data-test-i-i-s-shop2-invoice-e-shipmentDateTime=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "shipmentDateTime" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-shop2-invoice-e.invoiceItem-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="invoiceItemGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.invoiceItem
+      content=model.invoiceItem
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "invoiceItem" "isInvalid") "error")
+      data-test-i-i-s-shop2-invoice-e-invoiceItem=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "invoiceItem" "message")}}
+  </div>
+</form>

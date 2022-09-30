@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-shop2-storehouse-e",
+  "editForm": "i-i-s-shop2-storehouse-e",
+  "external": false,
+  "caption": "Склады",
+  "name": "IISShop2StorehouseL",
+  "className": "StorehouseL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-shop2-storehouse",
+      "modelProjection": "StorehouseL"
+    }
+  ]
+}

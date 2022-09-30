@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-shop2-product-e",
+  "editForm": "i-i-s-shop2-product-e",
+  "external": false,
+  "caption": "Товары",
+  "name": "IISShop2ProductL",
+  "className": "ProductL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-shop2-product",
+      "modelProjection": "ProductL"
+    }
+  ]
+}

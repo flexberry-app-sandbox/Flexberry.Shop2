@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-shop2-document-e",
+  "editForm": "i-i-s-shop2-document-e",
+  "external": false,
+  "caption": "Document",
+  "name": "IISShop2DocumentL",
+  "className": "DocumentL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-shop2-document",
+      "modelProjection": "DocumentL"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Сотрудник",
+  "name": "IISShop2EmployeeE",
+  "className": "EmployeeE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-shop2-employee",
+      "modelProjection": "EmployeeE"
+    }
+  ]
+}

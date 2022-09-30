@@ -1,0 +1,1 @@
+docker-compose -p shop2 up -d
